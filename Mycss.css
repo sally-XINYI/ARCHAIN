@@ -1,0 +1,235 @@
+.title{
+  color: white;
+  text-align: center;
+  margin-top:30px;
+}
+.login{
+  height: 380px;
+  width: 60%;
+  background-color: white;
+  border-radius: 15px;
+  text-align: center;
+  margin:0 auto
+}
+.bottom{
+  height: 31px;
+}
+.Bank{
+  width: 30%;
+  margin-left: 80px;
+  float: left;
+  height: 30px;
+  border-left:1px solid black;
+  border-right:1px solid black;
+  border-top:1px solid black;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  text-align: center;
+}
+.Company{
+  width: 30%;
+  margin-right: 80px;
+  float: right;
+  height: 30px;
+  border-left:1px solid black;
+  border-right:1px solid black;
+  border-top:1px solid black;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  text-align: center;
+}
+.center1{
+  width: 65%;
+  border:0;
+  float: top;
+  height: 250px;
+  margin:0 auto;
+}
+.center2{
+  width: 65%;
+  border:0;
+  float: top;
+  height: 250px;
+  margin:0 auto;
+}
+.Input{
+  margin-top: 30px;
+  height: 25px;
+  width: 65%;
+  border:1px solid #778899;
+  border-radius: 5px;
+}
+.Login{
+  margin-top: 50px;
+  width: 60%;
+  height: 40px;
+  background-color: #499AC8;
+  color: white;
+  border:1px solid #778899;
+  border-radius: 10px;
+}
+.el-button--primary{
+  background-color: white;
+}
+.head{
+  height: 65px;
+  background: url("src/background picture.jpg") no-repeat;
+  margin: 0 auto;
+}
+.logo{
+  color: white;
+  font-size: 30px;
+  margin: 0 auto;
+  line-height: 60px;
+  width: 20%;
+  float: left;
+  margin-left: 15px;
+}
+.bank_button{
+  width: 49%;
+  float: right;
+  margin-top: 12px;
+}
+.bank_name{
+  color: 	#E6E6FA;
+  font-size: 20px;
+  margin: 0 auto;
+  line-height: 60px;
+  width: 11%;
+  float: right;
+}
+.body1_inside{
+  margin-top: 80px;
+  width: 30%;
+  display: inline-block;
+  margin-left: 100px;
+}
+.body1_left{
+  margin-left: 30px;
+  line-height: 45px;
+}
+.body1_middle{
+  border: 1px solid #2F528F;
+  height: 300px;
+  border-radius: 10px;
+}
+.money1{
+  margin-top: 10px;
+}
+.bank_title{
+  text-align: center;
+  color:#333F50;
+  font-size: 18px;
+}
+.bank_info{
+  margin-left: 10px;
+}
+.bank_down{
+  color: 	#00008B;
+  font-size: 30px;
+  float: right;
+  margin-right: 20px;
+}
+.core_left{
+  margin-left: 20px;
+  width: 30%;
+  float: left;
+  border: 1px solid 	#E6E6FA;
+  height: 300px;
+}
+.core_select{
+  color: #333F50;
+  font-size: 20px;
+  line-height: 40px;
+  margin-left: 10px;
+}
+.core_nonselect{
+  color: #A9A9A9;
+  font-size: 20px;
+  line-height: 40px;
+  margin-left: 10px;
+}
+.core_right{
+  margin-right: 21px;
+  width: 64%;
+  float: right;
+  border-bottom: 1px solid 	#E6E6FA;
+  border-right: 1px solid 	#E6E6FA;
+  border-top: 1px solid 	#E6E6FA;
+  height: 300px;
+}
+.core_name{
+  line-height: 100px;
+  margin-left: 80px;
+}
+.core_address{
+  background-color: #D3D3D3;
+  margin-left: 60px;
+  width: 80%;
+  border-radius: 5px;
+  margin-top: 40px;
+}
+.core_addressp{
+  font-size: 20px;
+  margin-left: 10px;
+  line-height: 35px;
+}
+.core_update{
+  float: right;
+  margin-right: 20px;
+  margin-top:50px;
+  font-size: 15px;
+  color:	#696969
+}
+.core_balancep{
+  margin-left: 60px;
+  width: 80%;
+  border-radius: 5px;
+  margin-top: 40px;
+  font-size: 30px;
+  font-weight: bold;
+}
+.issue_left{
+  margin-left: 30px;
+  margin-top: 20px;
+  width: 50%;
+  float: left;
+  height: 250px;
+}
+.issue_bill{
+  margin-top: 50px;
+  margin-left: 200px;
+}
+.issue_right{
+  margin-right: 20px;
+  margin-top: 50px;
+  width: 30%;
+  float: right;
+  height: 200px;
+}
+.transfer{
+  width: 60%;
+  margin: 0 auto;
+}
+.transfer_button{
+  margin-left: 150px;
+  margin-top: 30px;
+  width: 90%;
+}
+.bank_body1{
+  height: 35px;
+}
+.transaction_button{
+  margin-left: 10px;
+  background-color: 	#6495ED;
+  border: 0;
+  height: 30px;
+  color: white;
+  border-radius: 5px;
+}
+.bank_body1_v2{
+  margin-left: 250px;
+  margin-top: 80px;
+  line-height: 40px;
+}
+

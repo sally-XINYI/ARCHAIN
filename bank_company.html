@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="Mycss.css">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="fonts/index.css" />
+  <script src="js/jquery-3.5.1.js"></script>
+  <script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/element.js" type="text/javascript" charset="utf-8"></script>
+  <title>Bank</title>
+</head>
+<body>
+<div id="app">
+  <div class="head" background="src/background picture.jpg">
+    <p class="logo">AR Chain</p>
+    <el-button type="primary" @click="Companies">Companies</el-button>
+    <el-button @click="Bank">Bank</el-button>
+    <el-button @click="AR">AR chain</el-button>
+    <div class="bank_name">
+      <el-dropdown @command="logout">
+        <el-button @click="Name">Name</el-button>
+        <el-dropdown-menu slot="dropdown">
+          <el-dropdown-item>Logout</el-dropdown-item>
+        </el-dropdown-menu>
+      </el-dropdown>
+    </div>
+  </div>
+  <div class="bank_body1">
+<!--    <p style="color: #333F50; font-size: 20px">Mange Company Status</p>-->
+  </div>
+  <el-table
+    ref="multipleTable"
+    :data="companyData"
+    tooltip-effect="dark"
+    style="width: 85%;margin: 0 auto"
+    :header-cell-style="{color:'black',backgroundColor:'	#DCDCDC',textAlign:'center',fontSize:'12px'}"
+    @selection-change="handleSelectionChange">
+    <el-table-column
+      type="selection"
+      width="55">
+    </el-table-column>
+    <el-table-column
+      prop="company"
+      label="Company"
+      width="100">
+    </el-table-column>
+    </el-table-column>
+    <el-table-column
+      prop="bank_account"
+      label="Bank Account"
+      width="130">
+    </el-table-column>
+    <el-table-column
+      prop="bank_balance"
+      label="Bank Balance"
+      width="130">
+    </el-table-column>
+    <el-table-column
+      prop="ar_address"
+      label="AR Address"
+      width="130">
+    </el-table-column>
+    <el-table-column
+      prop="status"
+      label="Status"
+      show-overflow-tooltip>
+    </el-table-column>
+  </el-table>
+  <el-button type="success" size="small" style="float: left; margin-left: 30px" @click="enroll">Enroll as Core</el-button>
+  <el-button type="success" size="small" style="float: left; margin-left: 30px" @click="drop">Drop as Non Core</el-button>
+</div>
+</body>
+
+
+<script>
+  new Vue({
+    el: '#app',
+    data(){
+      return {
+        visible: false,
+        activeName: 'first',
+        companyData:[{
+          company:'1',
+          bank_account:'1',
+          bank_balance:'1',
+          ar_address:'1',
+          status:'1'
+        }]
+      }
+    },
+    methods: {
+      handleClick(tab, event) {
+        console.log(tab, event);
+      },
+      Name(){
+        self.location = "bank.html"
+      },
+      Companies(){
+        self.location = "bank_company.html"
+      },
+      Bank(){
+        self.location = "bank_bank.html"
+      },
+      AR(){
+        self.location = "bank_AR_Chain.html"
+      },
+      logout(){
+        self.location = "index.html"
+      },
+      enroll(){
+        this.$confirm('XX Company', 'Enroll Company as CORE company:', {
+          confirmButtonText: 'Confirm',
+          confirmButtonClass: 'confirm',
+          cancelButtonText: 'Back',
+          cancelButtonClass: 'cancel'
+        }).then(() => {
+          this.$message({
+            type: 'info',
+            message: 'Confirm the enrollment!'
+          });
+        }).catch(() => {
+          this.$message({
+            type: 'info',
+            message: 'Cancel the enrollment!'
+          });
+        });
+      },
+      drop(){
+        this.$confirm('XX Company', 'Drop Company as NON CORE company:', {
+          confirmButtonText: 'Confirm',
+          confirmButtonClass: 'confirm',
+          cancelButtonText: 'Back',
+          cancelButtonClass: 'cancel'
+        }).then(() => {
+          this.$message({
+            type: 'info',
+            message: 'Confirm the enrollment!'
+          });
+        }).catch(() => {
+          this.$message({
+            type: 'info',
+            message: 'Cancel the enrollment!'
+          });
+        });
+      }
+    }
+  })
+</script>
+</html>
+<style lang="less">
+  .el-button{
+    margin-top: 10px;
+    color: 	#778899;
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+  }
+  .el-button:hover{
+    color: white;
+    background-color: transparent;
+    border-bottom: 1px solid white;
+  }
+  .el-button:focus{
+    color: white;
+    background-color: transparent;
+    border-bottom: 1px solid white;
+  }
+  .el-button--primary{
+    color: white;
+    background-color: transparent;
+    border-bottom: 1px solid white;
+  }
+  .el-button--primary:hover{
+    color: white;
+    background-color: transparent;
+    border-bottom: 1px solid white;
+  }
+  .el-button--primary:focus{
+    color: white;
+    background-color: transparent;
+    border-bottom: 1px solid white;
+  }
+  .el-button--success{
+    color: #4472C4;
+    background-color: transparent;
+    border: 1px solid #4472C4;
+    border-radius: 5px;
+  }
+  .el-button--success:hover{
+    color: white;
+    background-color: #4472C4;
+    border: 0;
+    border-radius: 5px;
+  }
+  .el-button--success:focus{
+    color: white;
+    background-color: #4472C4;
+    border: 0;
+    border-radius: 5px;
+  }
+  .confirm{
+    color: #4472C4;
+    background-color: transparent;
+    border: 1px solid #4472C4;
+    border-radius: 5px;
+  }
+  .confirm:focus{
+    color: white;
+    background-color: #4472C4;
+    border: 0;
+    border-radius: 5px;
+  }
+  .confirm:hover{
+    color: white;
+    background-color: #4472C4;
+    border: 0;
+    border-radius: 5px;
+  }
+  .cancel{
+    color: #4472C4;
+    background-color: transparent;
+    border: 1px solid #4472C4;
+    border-radius: 5px;
+  }
+  .cancel:focus{
+    color: white;
+    background-color: #4472C4;
+    border: 0;
+    border-radius: 5px;
+  }
+  .cancel:hover{
+    color: white;
+    background-color: #4472C4;
+    border: 0;
+    border-radius: 5px;
+  }
+</style>

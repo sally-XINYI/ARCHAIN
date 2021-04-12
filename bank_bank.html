@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="Mycss.css">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="fonts/index.css" />
+  <script src="js/jquery-3.5.1.js"></script>
+  <script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/element.js" type="text/javascript" charset="utf-8"></script>
+  <title>Bank</title>
+</head>
+<body>
+<div id="app">
+  <div class="head" background="src/background picture.jpg">
+    <p class="logo">AR Chain</p>
+    <el-button @click="Companies">Companies</el-button>
+    <el-button type="primary" @click="Bank">Bank</el-button>
+    <el-button @click="AR">AR chain</el-button>
+    <div class="bank_name">
+      <el-dropdown @command="logout">
+        <el-button @click="Name">Name</el-button>
+        <el-dropdown-menu slot="dropdown">
+          <el-dropdown-item>Logout</el-dropdown-item>
+        </el-dropdown-menu>
+      </el-dropdown>
+    </div>
+  </div>
+  <div class="bank_body1">
+<!--    <p style="color: #333F50; font-size: 20px">Transaction Record in Bank System</p>-->
+  </div>
+  <el-table
+    ref="multipleTable"
+    :data="transactionData"
+    tooltip-effect="dark"
+    style="width: 90%;margin: 0 auto"
+    :header-cell-style="{color:'black',backgroundColor:'	#DCDCDC',textAlign:'center',fontSize:'12px'}"
+    @selection-change="handleSelectionChange">
+    <el-table-column
+      prop="date"
+      label="Date"
+      width="100">
+    </el-table-column>
+    <el-table-column
+      prop="type"
+      label="Type"
+      width="100">
+    </el-table-column>
+    <el-table-column
+      prop="company"
+      label="Company"
+      width="120">
+    </el-table-column>
+    <el-table-column
+      prop="bank_account"
+      label="Bank Account"
+      width="150">
+    </el-table-column>
+    <el-table-column
+      prop="amount"
+      label="Amount"
+      width="120">
+    </el-table-column>
+    <el-table-column
+      prop="bank_balance"
+      label="Bank Balance"
+      show-overflow-tooltip>
+    </el-table-column>
+  </el-table>
+</div>
+</body>
+
+
+<script>
+  new Vue({
+    el: '#app',
+    data(){
+      return {
+        visible: false,
+        activeName: 'first',
+        transactionData:[{
+          type:'1',
+          company:'1',
+          bank_account:'1',
+          amount:'1',
+          bank_balance:'1',
+        }]
+      }
+    },
+    methods: {
+      handleClick(tab, event) {
+        console.log(tab, event);
+      },
+      Name(){
+        self.location = "bank.html"
+      },
+      Companies(){
+        self.location = "bank_company.html"
+      },
+      Bank(){
+        self.location = "bank_bank.html"
+      },
+      AR(){
+        self.location = "bank_AR_Chain.html"
+      },
+      logout(){
+        self.location = "index.html"
+      }
+    }
+  })
+</script>
+</html>
+<style lang="less">
+  .el-button{
+    margin-top: 10px;
+    color: 	#778899;
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+  }
+  .el-button:hover{
+    color: white;
+    background-color: transparent;
+    border-bottom: 1px solid white;
+  }
+  .el-button:focus{
+    color: white;
+    background-color: transparent;
+    border-bottom: 1px solid white;
+  }
+  .el-button--primary{
+    color: white;
+    background-color: transparent;
+    border-bottom: 1px solid white;
+  }
+  .el-button--primary:hover{
+    color: white;
+    background-color: transparent;
+    border-bottom: 1px solid white;
+  }
+  .el-button--primary:focus{
+    color: white;
+    background-color: transparent;
+    border-bottom: 1px solid white;
+  }
+</style>

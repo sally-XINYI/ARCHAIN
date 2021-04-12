@@ -1,19 +1,92 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <title>Hello World!</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
+<head>
+  <link rel="stylesheet" type="text/css" href="Mycss.css">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="fonts/index.css" />
+  <script src="js/jquery-3.5.1.js"></script>
+  <script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/element.js" type="text/javascript" charset="utf-8"></script>
+  <title>AR chain</title>
+</head>
+<body background="src/background picture.jpg">
+  <div id="app">
+    <h1 class="title">AR Chain</h1>
+    <div class="login">
+      <h1>Welcome Back!</h1>
+      <el-tabs v-model="activeName" type="card" @tab-click="handleClick">
+        <el-tab-pane label="Bank" name="first">
+          <div class="center1">
+            <input type="text" name="username" placeholder="Username" class="Input"/>
+            <img src="src/人员.png" height="25px" width="25px">
+            <input type="password" name="password" placeholder="Password" class="Input"/>
+            <img src="src/密码.png" height="25px" width="25px">
+            <input type="button" name="login1" value="Login" class="Login" @click="login()"/>
+          </div>
+        </el-tab-pane>
+        <el-tab-pane label="Company" name="second">
+          <div class="center2">
+            <el-col :span="12" style="margin-top: 20px; margin-left: 73px">
+              <el-upload
+                ref="upload"
+                action="alert"
+                multiple
+                :limit="3"
+                :auto-upload="false"
+                :file-list="uploadFiles"
+                :on-change="loadJsonFromFile"
+                :on-remove="removeFile">
+                <el-button type="primary">
+                  Keystore File
+                  <img src="src/文件.png" height="18px" width="23px">
+                </el-button>
+              </el-upload>
+            </el-col>
+            </el-row>
+            <input type="button" name="login1" value="Login" class="Login" @click="login2()"/>
+          </div>
+        </el-tab-pane>
+      </el-tabs>
+    </div>
+  </div>
+</body>
 
-    <!-- You can also require other files to run in this process -->
-    <script src="./renderer.js"></script>
-  </body>
+
+<script>
+  new Vue({
+    el: '#app',
+    data(){
+      return {
+        visible: false,
+        activeName: 'first'
+      }
+    },
+    methods: {
+      handleClick(tab, event) {
+        console.log(tab, event);
+      },
+      login(){
+        self.location = "bank.html"
+      },
+      login2(){
+        self.location = "noncore_main.html"
+      }
+    }
+  })
+</script>
 </html>
+<style lang="less">
+  .el-button--primary{
+    background-color: white;
+    color: black;
+    border:1px solid #778899;
+  }
+  .el-button--primary:hover{
+    background-color: #B0C4DE;
+    border-color: #B0C4DE;
+  }
+  .el-button--primary:focus{
+    background-color: #B0C4DE;
+    border-color: #B0C4DE;
+  }
+</style>

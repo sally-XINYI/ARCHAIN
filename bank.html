@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="Mycss.css">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="fonts/index.css" />
+  <script src="js/jquery-3.5.1.js"></script>
+  <script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/element.js" type="text/javascript" charset="utf-8"></script>
+  <title>Bank</title>
+</head>
+<body>
+  <div id="app">
+    <div class="head" background="src/background picture.jpg">
+      <p class="logo">AR Chain</p>
+      <el-button @click="Companies">Companies</el-button>
+      <el-button @click="Bank">Bank</el-button>
+      <el-button @click="AR">AR chain</el-button>
+      <div class="bank_name">
+        <el-dropdown @command="logout">
+          <el-button type="primary" @click="Name">Name</el-button>
+          <el-dropdown-menu slot="dropdown">
+            <el-dropdown-item>Logout</el-dropdown-item>
+          </el-dropdown-menu>
+        </el-dropdown>
+      </div>
+    </div>
+    <div class="bank_body1">
+      <div class="body1_inside">
+        <div class="body1_middle">
+          <div class="money1" align="center">
+            <img src="src/money1.png" height="60px" width="60px">
+          </div>
+          <p class="bank_title">Information in Bank</p>
+          <p class="bank_info">Name:</p>
+          <p class="bank_info">Account:</p>
+          <p class="bank_info">Balance:</p>
+        </div>
+      </div>
+      <div class="body1_inside">
+        <div class="body1_middle">
+          <div class="money1" align="center">
+            <img src="src/blockchain.png" height="60px" width="60px">
+          </div>
+          <p class="bank_title">Information in AR chain</p>
+          <p class="bank_info">Name:</p>
+          <p class="bank_info">AR Address:</p>
+<!--          <p class="bank_info">Balance:</p>-->
+          <input class="transaction_button" type="button" value="Transaction Record">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+
+<script>
+  new Vue({
+    el: '#app',
+    data(){
+      return {
+        visible: false,
+        activeName: 'first'
+      }
+    },
+    methods: {
+      handleClick(tab, event) {
+        console.log(tab, event);
+      },
+      Name(){
+        self.location = "bank.html"
+      },
+      Companies(){
+        self.location = "bank_company.html"
+      },
+      Bank(){
+        self.location = "bank_bank.html"
+      },
+      AR(){
+        self.location = "bank_AR_Chain.html"
+      },
+      logout(){
+        self.location = "index.html"
+      }
+    }
+  })
+</script>
+</html>
+<style lang="less">
+  .el-button{
+    margin-top: 10px;
+    color: 	#778899;
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+  }
+  .el-button:hover{
+    color: white;
+    background-color: transparent;
+    border-bottom: 1px solid white;
+  }
+  .el-button:focus{
+    color: white;
+    background-color: transparent;
+    border-bottom: 1px solid white;
+  }
+  .el-button--primary{
+    color: white;
+    background-color: transparent;
+    border-bottom: 1px solid white;
+  }
+  .el-button--primary:hover{
+    color: white;
+    background-color: transparent;
+    border-bottom: 1px solid white;
+  }
+  .el-button--primary:focus{
+    color: white;
+    background-color: transparent;
+    border-bottom: 1px solid white;
+  }
+  .el-dropdown-link {
+    cursor: pointer;
+    color: #409EFF;
+  }
+  .el-icon-arrow-down {
+    font-size: 12px;
+  }
+</style>
